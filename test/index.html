@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="Repositorie">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Mr-R0m4n</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -12,54 +12,37 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     <style type="text/css">
-
-        #header{
-            margin: 0 auto;
+        
+        #container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
-        #navBox{
-            position: absolute;
-            height: 1000px;
-            width: 33%;
-            background-color: red;
-            z-index: 1;
-            top: 33%;
-            left: 33%;
-            right: auto;
-            text-align: center;
-        }
-
-        h1{
-            font-size: 1870%;
-        }
-
-        #banner{
+        #box{
             background-image: url(header.jpg);
-            background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            height: 100vh;
-            width: 100%;
-            z-index: 0;
+            background-position: center;
+            border-radius: 2vh;
+            height: 80vh;
         }
 
-        .flexContainer{
-            display: flex;
-            flex-direction: row;
+        @media (max-width: 992px) {
+            #box {
+                height: 100vh;
+            }
         }
-           
+        
     </style>
 
 </head>
 <body>
-    <header id="header" class="flexContainer">
-        <nav id="navBox" class="flexItem">
-            <h1>Welcome</h1>
-        </nav>
-
-        <header id="banner" class="flexItem">
-        </header>
-    </header>
+    <div id="container">
+        <div id="box" class="col-lg-8 col-md-8 col-xs-12 col-sm-12">
+        </div>
+    </div>
     
     <script type="text/javascript">
     </script>   
