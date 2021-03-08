@@ -13,25 +13,50 @@
 
     <style type="text/css">
         
-        #container{
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        body{
+            overflow: hidden;
             height: 100vh;
         }
+        
+        .container{
+            height: 100%;
+            width: 100%;
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+        }
 
-        #box{
+        section{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+            scroll-snap-align: center;
+        }
+
+        #home{
             background-image: url(header.jpg);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
             border-radius: 0%;
-            height: 100vh;
         }
 
-        #nav{
-            background-color: rgb(255, 255, 255);
-            height: 5vh;
+        #about{
+            background-color: black;
+            border-radius: 0%;
+        }
+
+        #projects{
+            background-color: white;
+            border-radius: 0%;
+        }
+
+        #contact{
+            background-color: black;
+            border-radius: 0%;
         }
 
         .datetime{
@@ -57,20 +82,10 @@
             font-weight: 600;
         }
 
-        .time span:not:(:last-child){
-            position: relative;
-            font-weight: 600;
-            text-align: center;
-        }
-
         @media (min-width: 992px){
-            #box{
-                height: 70vh;
+            #home{
+                height: 100vh;
                 border-radius: 2vh;
-            }
-            #nav{
-                background-color: rgb(220, 220, 220);
-                height: 3vh;
             }
         }        
         
@@ -78,8 +93,8 @@
 
 </head>
 <body onload="initClock()">
-    <main id="container">
-        <div id="box" class="col-lg-10 col-md-10 col-xs-12 col-sm-12">
+    <div class="container">
+        <section id="home" class="col-lg-10 col-md-10 col-xs-12 col-sm-12">
             <div class="datetime">
                 <div class="time">
                     <span id="hour">00</span> :
@@ -92,11 +107,15 @@
                     <span id="year">Year</span>
                 </div>
             </div>
-        </div>
-    </main>
-    <footer id="nav">
-
-    </footer>
+        </section>
+        <section id="about" class="col-lg-10 col-md-10 col-xs-12 col-sm-12">
+        </section>
+        <section id="projects" class="col-lg-10 col-md-10 col-xs-12 col-sm-12">
+        </section>
+        <section id="contact" class="col-lg-10 col-md-10 col-xs-12 col-sm-12">
+        </section>
+    </div>
+    
     
     <script type="text/javascript">
         function updateClock(){
