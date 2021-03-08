@@ -25,27 +25,109 @@
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            border-radius: 2vh;
-            height: 80vh;
+            border-radius: 0%;
+            height: 100vh;
         }
 
-        @media (max-width: 992px) {
-            #box {
-                height: 100vh;
-                border-radius: 0px;
-            }
+        #nav{
+            background-color: rgb(255, 255, 255);
+            height: 5vh;
         }
+
+        .datetime{
+            position: relative;
+            margin: 100px auto;
+            color: rgb(255, 255, 255);
+            background: transparent;
+            width: 45vh;
+        }
+
+        .date{
+            text-align: center;
+            font-weight: 400;
+            letter-spacing: 0.1vw;
+            font-size: 3vh;
+        }
+
+        .time{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10vh;
+            font-weight: 600;
+        }
+
+        .time span:not:(:last-child){
+            position: relative;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        @media (min-width: 992px){
+            #box{
+                height: 70vh;
+                border-radius: 2vh;
+            }
+            #nav{
+                background-color: rgb(220, 220, 220);
+                height: 3vh;
+            }
+        }        
         
     </style>
 
 </head>
-<body>
-    <div id="container">
-        <div id="box" class="col-lg-8 col-md-8 col-xs-12 col-sm-12">
+<body onload="initClock()">
+    <main id="container">
+        <div id="box" class="col-lg-10 col-md-10 col-xs-12 col-sm-12">
+            <div class="datetime">
+                <div class="time">
+                    <span id="hour">00</span> :
+                    <span id="minute">00</span>
+                </div>
+                <div class="date">
+                    <span id="dayname">Day</span>
+                    <span id="daynum">00</span>.
+                    <span id="month">Month</span>.
+                    <span id="year">Year</span>
+                </div>
+            </div>
         </div>
-    </div>
+    </main>
+    <footer id="nav">
+
+    </footer>
     
     <script type="text/javascript">
+        function updateClock(){
+            var now = new Date();
+            var hou = now.getHours(),
+                min = now.getMinutes(),
+                dname = now.getDay(),
+                dnum = now.getDate(),
+                mon = now.getMonth(),
+                yr = now.getFullYear();
+            
+            Number.prototype.pad = function(digits){
+                for(var n = this.toString(); n.length < digits; n = 0 +n);
+                return n;
+            }
+            
+            var months = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
+            var week = ["Sonntag", "Montag", "Dienstag", "Mitwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
+            var ids = ["hour", "minute", "dayname", "daynum", "month", "year"];
+            var values = [hou.pad(2), min.pad(2), week[dname], dnum.pad(2), months[mon], yr];
+
+            for(var i = 0; i < ids.length; i++){
+            document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+            }
+        }
+        
+
+        function initClock(){
+            updateClock;
+            window.setInterval("updateClock()", 1);
+        }
     </script>   
 </body>
 </html>
