@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Mr-R0m4n</title>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+    <script src="jquery-3.6.0.js"></script>
+    <script src="jquery.nicescroll.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
 
     <style type="text/css">
         
@@ -27,9 +29,12 @@
         }
 
         section{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            position: relative;
+            padding-top: 10vh;;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;            
+            text-align: center;
             justify-content: center;
             height: 100vh;
             width: 100vw;
@@ -45,33 +50,30 @@
         }
 
         #about{
-            background-color: black;
-            border-radius: 0%;
+            background-color: white;
         }
 
         #projects{
             background-color: white;
-            border-radius: 0%;
         }
 
         #contact{
-            background-color: black;
-            border-radius: 0%;
+            background-color: white;
         }
 
         .datetime{
             position: relative;
-            margin: 100px auto;
+            margin: 0 auto;
             color: rgb(255, 255, 255);
             background: transparent;
-            width: 45vh;
+            width: 50vw;
         }
 
         .date{
             text-align: center;
             font-weight: 400;
             letter-spacing: 0.1vw;
-            font-size: 3vh;
+            font-size: 2em;
         }
 
         .time{
@@ -86,6 +88,9 @@
             #home{
                 height: 100vh;
                 border-radius: 2vh;
+            }
+            .date{
+                font-size: 4em;
             }
         }        
         
@@ -102,17 +107,22 @@
                 </div>
                 <div class="date">
                     <span id="dayname">Day</span>
+                    <br>
                     <span id="daynum">00</span>.
                     <span id="month">Month</span>.
                     <span id="year">Year</span>
                 </div>
             </div>
         </section>
+        <div class="col-lg-1 col-md-1"></div>
         <section id="about" class="col-lg-10 col-md-10 col-xs-12 col-sm-12">
+            <h1>About me, myself and i!</h1>
         </section>
         <section id="projects" class="col-lg-10 col-md-10 col-xs-12 col-sm-12">
+            <h1>My Stuff I want to impress you with!</h1>
         </section>
         <section id="contact" class="col-lg-10 col-md-10 col-xs-12 col-sm-12">
+            <h1>Get in touch with me!</h1>
         </section>
     </div>
     
@@ -141,6 +151,10 @@
             document.getElementById(ids[i]).firstChild.nodeValue = values[i];
             }
         }
+
+        $(document).ready(function(){
+            $("html").niceScroll({scrollspeed: '10'});
+        })
         
 
         function initClock(){
