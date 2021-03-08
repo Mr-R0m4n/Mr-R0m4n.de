@@ -21,6 +21,7 @@
         }
         
         .container{
+            padding: 0;
             height: 100%;
             width: 100%;
             overflow-y: scroll;
@@ -37,8 +38,11 @@
             text-align: center;
             justify-content: center;
             height: 100vh;
-            width: 100vw;
             scroll-snap-align: center;
+        }
+
+        section:nth-last-child(3){
+            flex-direction: column;
         }
 
         #home{
@@ -85,12 +89,21 @@
         }
 
         @media (min-width: 992px){
-            #home{
-                height: 100vh;
+            #home, #about, #projects, #contact{
+                height: 80vh;
                 border-radius: 2vh;
             }
             .date{
                 font-size: 4em;
+            }
+
+            section{
+                margin-top: 10vh;
+                margin-bottom: 10vh;
+            }
+
+            section:first-child{
+                width: 80vw;
             }
         }        
         
@@ -99,7 +112,7 @@
 </head>
 <body onload="initClock()">
     <div class="container">
-        <section id="home" class="col-lg-10 col-md-10 col-xs-12 col-sm-12">
+        <section id="home">
             <div class="datetime">
                 <div class="time">
                     <span id="hour">00</span> :
@@ -114,14 +127,13 @@
                 </div>
             </div>
         </section>
-        <div class="col-lg-1 col-md-1"></div>
-        <section id="about" class="col-lg-10 col-md-10 col-xs-12 col-sm-12">
-            <h1>About me, myself and i!</h1>
+        <section id="about">
+                <h1>About me, myself and i!</h1>
         </section>
-        <section id="projects" class="col-lg-10 col-md-10 col-xs-12 col-sm-12">
+        <section id="projects">
             <h1>My Stuff I want to impress you with!</h1>
         </section>
-        <section id="contact" class="col-lg-10 col-md-10 col-xs-12 col-sm-12">
+        <section id="contact">
             <h1>Get in touch with me!</h1>
         </section>
     </div>
