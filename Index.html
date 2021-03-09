@@ -19,6 +19,10 @@
             overflow: hidden;
             height: 100vh;
         }
+
+        p{
+            font-size: 2em;
+        }
         
         .container{
             padding: 0;
@@ -48,30 +52,10 @@
             border-radius: 0%;
         }
 
-        section:nth-child(2), section:nth-child(3){
-            height: unset;
-        }
-
-        #about{
-            background-color: white;
-        }
-
         .media{
             position: relative;
             max-width: 80vw;
             margin: 0 auto;
-        }
-
-        .media p{
-            font-size: 2em;
-        }
-
-        #projects{
-            background-color: white;
-        }
-
-        #contact{
-            background-color: white;
         }
 
         .datetime{
@@ -98,40 +82,11 @@
             font-weight: 600;
         }
 
-        @media (min-width: 992px){
-            #home, #about, #projects, #contact{
-                height: 100vh;
-                border-radius: 2vh;
-            }
-            .date{
-                font-size: 4em;
-            }
-
-            section{
-                margin-top: 10vh;
-                margin-bottom: 10vh;
-            }
-
-            section:first-child{
-                width: 80vw;
-            }
-        }
-
-        #welcome{
-            width: 50%;
-            transform: translateX(+50%);
-            flex-grow: 0.4;
-            text-align: center;
-            color: white;
-            font-size: 2vh;
-            flex-shrink: 0;
-        }
-
         #footer{
+            padding: 0 2vw 0 2vw;
             flex-shrink: 0;
-            height: 5vh;
+            height: 2.5vh;
             background-color: transparent;
-            padding: 2vh;
             color: white;
             font-weight: 600;
         }
@@ -146,13 +101,33 @@
         .nav-right{
             float: right;
         }
+
+        .card {
+            transform-style: preserve-3d;
+        }
+
+        @media (min-width: 992px){
+            #home, #about, #projects, #contact{
+                height: 100vh;
+                border-radius: 2vh;
+            }
+            .date{
+                font-size: 4em;
+            }
+
+            section{
+                margin-top: 10vh;
+                margin-bottom: 10vh;
+                width: 80vw;
+            }
+        }
         
     </style>
 
 </head>
 <body onload="initClock()">
     <div class="container">
-        <section id="home">
+        <section class="content" id="home">
             <div class="datetime">
                 <div class="time">
                     <span id="hour">00</span> :
@@ -166,22 +141,19 @@
                     <span id="year">Year</span>
                 </div>
             </div>
-            <div id="welcome">
-                <p>Ich freue mich, Dich bei mir Willkommen zu heißen!</p>
-            </div>
             <nav id="footer">
                 <div class="nav-left">
-                    Mr-R0m4n
+                    <p>Mr-R0m4n</p> 
                 </div>
                 <div class="nav-right">
                     <p>Picture by <a href="https://www.pexels.com/de-de/@simonmigaj">Simon Migaj</a></p>
                 </div>
             </nav>
         </section>
-        <section id="about">
+        <section class="content" id="about">
                 <div class="media">
                     <div class="media-left">
-                        <img src="Roman.jpg" alt="" class="media-object">
+                        <img class="card" src="Roman.jpg" alt="" class="media-object">
                         <a>LinkedIn</a> 
                         <a>Github</a> 
                     </div>
@@ -201,52 +173,16 @@
                             quisquam rerum qui itaque alias non, debitis voluptatem dicta cum, ducimus maxime
                             tempore! At inventore commodi possimus nihil quo! Cumque rerum quae placeat ea 
                             beatae esse enim eveniet! Eveniet cumque, quos pariatur iste doloribus, numquam, 
-                            corrupti nisi earum nesciunt et quaerat temporibus quidem dolorem esse tenetur 
-                            consequuntur nobis repellat culpa animi similique est iusto incidunt exercitationem.
-                            Atque possimus at quod dolores quidem, recusandae dignissimos? Culpa in 
-                            voluptatibus veniam ipsa ipsum, neque velit hic ullam reprehenderit nemo ipsam 
-                            sint tenetur veritatis quasi, eum totam omnis nisi accusantium quam sed quidem 
-                            similique tempore animi non? Nemo, quos. Ut eius vero sapiente corrupti nisi. 
-                            Provident placeat nulla vel iure ullam, itaque minima officia distinctio molestiae 
-                            voluptatibus, aut iusto officiis totam, sequi laudantium illum sunt. Velit fugiat 
-                            et dolorem officiis corrupti, doloremque ea deleniti, quis atque labore dolorum 
-                            rerum autem sunt ex recusandae, beatae temporibus ducimus consequuntur totam. A 
-                            sit impedit mollitia, iusto delectus fugit nemo ipsam quas perferendis ex libero 
-                            minus provident accusamus illum consequuntur tempora cumque totam nihil? Debitis 
-                            harum in numquam quam accusamus deleniti, quis unde. Minus qui exercitationem 
-                            eaque nostrum ab magni laudantium? Ullam doloribus optio quis dicta. Facilis 
-                            dolore, qui, repellendus cum tempore at molestiae ut vel sed doloribus nobis? Recusandae 
-                            assumenda officiis quod eveniet delectus, esse, magni doloribus ducimus quam dicta 
-                            temporibus provident eos et eum rem modi, earum distinctio voluptates repellat. Dolores 
-                            quisquam reiciendis, praesentium error iure sed quia iste odio, magnam incidunt, 
-                            id et quae labore modi optio voluptatum officia sint eos nihil dolore maxime. Ipsam 
-                            unde ducimus accusantium illum pariatur? Commodi dignissimos quis nihil velit, 
-                            possimus enim maxime sint accusantium molestiae id! Possimus consectetur quos minus 
-                            quo ex rerum in placeat ipsum quis, facilis non nihil cumque tempora? Illum iste 
-                            tenetur praesentium dolorum quod. Neque, consequatur cumque, ex quo voluptates, 
-                            nam accusamus eos at porro pariatur quibusdam officiis beatae ullam eum id sapiente 
-                            impedit similique autem doloribus necessitatibus possimus. Dignissimos, inventore? 
-                            Quos placeat hic dignissimos velit unde aliquam vero tempore quas fugiat amet 
-                            quam illo fugit rerum alias quaerat, at debitis voluptate inventore ullam sunt 
-                            tempora ratione pariatur nulla delectus! Inventore molestias eos tenetur ipsam 
-                            veniam, explicabo ut quas cupiditate exercitationem sapiente magni modi totam, 
-                            blanditiis officiis nisi vel. Porro perspiciatis alias inventore quos aliquam 
-                            est, quae accusantium ad asperiores consequatur ex animi consequuntur modi! 
-                            Explicabo culpa quaerat necessitatibus aperiam dicta ex repudiandae velit sapiente. 
-                            Esse quidem exercitationem illo? Iusto voluptatum eligendi, id dolores aperiam ab 
-                            dolorem, ad animi quia natus aliquid, provident nesciunt aliquam! Voluptatibus, 
-                            laudantium explicabo.
                         </p>
                 </div>
         </section>
-        <section id="projects">
+        <section class="content" id="projects">
             <h1>My Stuff I want to impress you with!</h1>
         </section>
-        <section id="contact">
+        <section class="content" id="contact">
             <h1>Get in touch with me!</h1>
         </section>
     </div>
-    
     
     <script type="text/javascript">
         function updateClock(){
