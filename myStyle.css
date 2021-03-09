@@ -11,11 +11,7 @@ body {
   overflow: hidden;
 }
 
-a {
-  color: white;
-  text-decoration: none;
-}
-
+a,
 a:hover,
 a:visited {
   color: white;
@@ -27,8 +23,8 @@ h1 {
 }
 
 .container {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   padding: 0;
   overflow-y: scroll;
   scroll-behavior: smooth;
@@ -41,25 +37,30 @@ section {
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
+}
+
+section:first-child {
+  height: 100vh;
 }
 
 #home {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   background-image: url(header.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding-top: 5vh;
   text-align: center;
 }
 
 .datetime {
-  position: relative;
-  margin: 0 auto 15% auto;
-  color: rgb(255, 255, 255);
-  background: transparent;
+  margin: 100px 0 100px 0;
   width: 50vw;
-  letter-spacing: 1rem;
+  color: white;
+  background: transparent;
+  letter-spacing: 0.5rem;
   font-weight: 600;
   text-align: center;
 }
@@ -69,15 +70,19 @@ section {
 }
 
 .time {
-  font-size: 10em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 7em;
 }
 
 #footer {
-  margin: 50% auto 0 auto;
+  position: absolute;
+  bottom: 10px;
   height: 2vh;
+  width: 92vw;
   background-color: transparent;
   font-weight: 600;
-  width: 98%;
 }
 
 .footer-left {
