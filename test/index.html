@@ -75,6 +75,7 @@
         }
 
         .datetime{
+            flex-grow: 1;
             position: relative;
             margin: 0 auto;
             color: rgb(255, 255, 255);
@@ -99,7 +100,7 @@
 
         @media (min-width: 992px){
             #home, #about, #projects, #contact{
-                
+                height: 100vh;
                 border-radius: 2vh;
             }
             .date{
@@ -114,7 +115,37 @@
             section:first-child{
                 width: 80vw;
             }
-        }        
+        }
+
+        #welcome{
+            width: 50%;
+            transform: translateX(+50%);
+            flex-grow: 0.4;
+            text-align: center;
+            color: white;
+            font-size: 2vh;
+            flex-shrink: 0;
+        }
+
+        #footer{
+            flex-shrink: 0;
+            height: 5vh;
+            background-color: transparent;
+            padding: 2vh;
+            color: white;
+            font-weight: 600;
+        }
+
+        #footer a{
+            color: white;
+        }
+
+        .nav-left{
+            float: left;
+        }
+        .nav-right{
+            float: right;
+        }
         
     </style>
 
@@ -135,6 +166,17 @@
                     <span id="year">Year</span>
                 </div>
             </div>
+            <div id="welcome">
+                <p>Ich freue mich, Dich bei mir Willkommen zu heißen</p>
+            </div>
+            <nav id="footer">
+                <div class="nav-left">
+                    Mr-R0m4n
+                </div>
+                <div class="nav-right">
+                    <p>Picture by <a>Simon Migaj</a></p>
+                </div>
+            </nav>
         </section>
         <section id="about">
                 <div class="media">
