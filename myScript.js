@@ -30,3 +30,7 @@ function initClock(){
 $(document).ready(function(){
     $("html").niceScroll({scrollspeed: '10'});
 })
+
+function hideAdressBar(){
+    window.scrollTo(0,1);
+}
