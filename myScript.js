@@ -31,6 +31,42 @@ $(document).ready(function(){
     $("html").niceScroll({scrollspeed: '10'});
 })
 
-function hideAdressBar(){
-    window.scrollTo(0,1);
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(elem => {
+        if (elem.isIntersecting) {
+            $("#textfield").animate({ scrollTop: 0 }, 1);
+        }
+    });
+});
+
+function toTop(){
+document.querySelectorAll('section').forEach(elem => observer.observe(elem));
+}
+
+function rotate(){
+const card = document.querySelector(".card");
+const cardBack = document.querySelector(".cardBack");
+const container = document.querySelector(".container");
+
+//Moving Animation
+container.addEventListener("mousemove", (e) => {
+    let xAxis = (window.innerWidth / 2 - e.pageX) / 20;
+    let yAxis = (window.innerHeight / 2 - e.pageY) / 20;
+    card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+    cardBack.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+});
+
+//Animate Out
+container.addEventListener("mouseleave", (e) => {
+    card.style.transition = `all 0.5s ease`;
+    card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+    cardBack.style.transition = `all 0.5s ease`;
+    cardBack.style.transform = `rotateY(0deg) rotateX(0deg)`;
+});
+
+//Animate In
+container.addEventListener("mouseenter", (e) => {
+    card.style.transition = `none`;
+    cardBack.style.transition = `none`;
+});
 }

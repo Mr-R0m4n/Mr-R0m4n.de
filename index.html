@@ -17,12 +17,12 @@
     <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');</style>
 
 </head>
-<body onload="initClock(), hideAdressBar()">
-    <div class="container">
+<body onload="initClock(), toTop(), rotate()">
+    <div class="wrapper">
         <section id="home">
             <div class="datetime">
                 <div class="time">
-                    <span id="hour">00</span> :
+                    <span id="hour">00</span>:
                     <span id="minute">00</span>
                 </div>
                 <div class="date">
@@ -49,45 +49,63 @@
             <div class="article">
                 <div id="textfield">
                     <h1>Es ist mir eine Freude, Dich begrüßen zu dürfen!</h1>
+                    <br>
                     <p>Es gibt sicher viel das ich Dir über mich erzählen kann.
                         <br>
                         Jedoch denke ich, dass Du vorwiegend an mir und meinen 
                         Fähigkeiten als Frontend Developer interessiert bist.
                         <br>
                         Da ich eine ehrliche und direkte Person bin, will ich Dir
-                        nicht verschweigen, dass meine Fähigkeiten durchaus ausbaufähig sind.
+                        nicht verschweigen, dass meine Fähigkeiten durchaus ausbaufähig sind.</p>
                         <br>
-                        Dies mache ich jedoch durch ein hohes Maß an leidenschaft weg.
-                        In meinem Fall ist es so das ich meine Leidenschaft für die
+                        <p>Dies mache ich jedoch durch ein hohes Maß an Engagement und Biss weg.</p>
+                        <br>
+                        <p>In meinem Fall ist es so das ich meine Leidenschaft für die
                         Softwareentwicklung leider etwas spät, vorallem in hinblick auf die
                         Zeit die ich mit Computern verbracht habe, entdeckt habe.
                         <br>
                         Ich kann mich noch sehr gut daran erinnern als ich mit 10 Jahren zum ersten mal
                         den PC meines Cousins bedienen durfte, und wenige Jahre später darauf folgend
-                        meinen eigenen bekam.
+                        meinen eigenen bekam.</p>
                         <br>
-                        Seit diesem Augenblick ist ein Teil von mir immer schon, für bissweil eins
-                        meiner größten und beständigsten Hobbys der Personal Computer reserviert.
+                        <p>Seit diesem Augenblick ist ein Teil von mir immer schon, für bissweil eins
+                        meiner größten und beständigsten Hobbys der Personal Computer reserviert.</p>
                         <br>
-                        Die Softwareentwicklung ist für mich ein ganz besonderes Thema. Die Möglichkeit, mir 
+                        <p>Die Softwareentwicklung ist für mich ein ganz besonderes Thema. Die Möglichkeit, mir 
                         Lösungen zu besteheneden Problemen und Hilfen für Menschen einfach auszudenken und
-                        direkt umsetzen zu können fasziniert mich unglaublich.
+                        direkt umsetzen zu können fasziniert mich unglaublich.</p>
                         <br>
-                        Die einzige Grenze an die ich hier stoßen kann ist die meiner Vorstellungskraft.
+                        <p>Die einzige Grenze an die ich hier stoßen kann ist die meiner Vorstellungskraft.</p>
                         <br>
-                        Ich hoffe Du bleibst noch ein wenig hier und siehst dich einfach etwas um. Vielleicht
+                        <p></p>Ich hoffe Du bleibst noch ein wenig hier und siehst dich einfach etwas um. Vielleicht
                         gefallen dir meine bissherigen Projekte oder du möchtest dich einfach gerne mit mir 
                         austauschen und suchst den Kontakt zu mir.
-                        Fühle dich frei und komme gerne wieder!
+                        Fühle dich frei und komme gerne wieder!</p>
                         <br>
-                        Roman
+                        <p>Roman</p>
+                        <br>
                         <div id="picture"><img src="Roman.jpg" alt="Roman"></div>
                     </p>
                 </div>
             </div>
         </section>
-        <section id="project">
-
+        <section id="projects">
+            <div class="container">
+                <div class="card">
+                    <div class="project">
+                        <img src="Roman.jpg" alt="roman">
+                    </div>
+                    <div class="info">
+                        <h1 class="title">Project XYZ</h1>
+                        <h3>Do Things i want it to do</h3>
+                        <div class="handle">
+                            <button id="open">Open</button>
+                            <button id="detail">Info</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardBack"></div>
+            </div>
         </section>
         <section id="contact">
 
