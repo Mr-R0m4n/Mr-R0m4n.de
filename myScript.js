@@ -44,29 +44,30 @@ document.querySelectorAll('section').forEach(elem => observer.observe(elem));
 }
 
 function rotate(){
-const card = document.querySelector(".card");
-const cardBack = document.querySelector(".cardBack");
-const container = document.querySelector(".container");
 
 //Moving Animation
-container.addEventListener("mousemove", (e) => {
-    let xAxis = (window.innerWidth / 2 - e.pageX) / 20;
-    let yAxis = (window.innerHeight / 2 - e.pageY) / 20;
-    card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-    cardBack.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+document.querySelectorAll(".card").forEach(item=> { item.addEventListener("touchmove", (e) => {
+    var evt = (typeof e.originalEvent === 'undefined') ? e : e.originalEvent;
+    var touch = evt.touches[0] || evt.changedTouches[0];
+    let xAxis = (-(window.innerWidth / 2 - touch.clientX) / 10);
+    let yAxis = (-(window.innerHeight / 2 - touch.clientY) / 10);
+    item.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+    e.preventDefault();
+    $('#cardContainer').css({overflow: 'hidden'});
+});
 });
 
 //Animate Out
-container.addEventListener("mouseleave", (e) => {
-    card.style.transition = `all 0.5s ease`;
-    card.style.transform = `rotateY(0deg) rotateX(0deg)`;
-    cardBack.style.transition = `all 0.5s ease`;
-    cardBack.style.transform = `rotateY(0deg) rotateX(0deg)`;
+document.querySelectorAll(".card").forEach(item=> { item.addEventListener("touchend", (e) => {
+    item.style.transition = `all 0.5s ease`;
+    item.style.transform = `rotateY(0deg) rotateX(0deg)`;
+    $('#cardContainer').css({overflowY: 'scroll'});
+});
 });
 
 //Animate In
-container.addEventListener("mouseenter", (e) => {
-    card.style.transition = `none`;
-    cardBack.style.transition = `none`;
+document.querySelectorAll(".card").forEach(item=> { item.addEventListener("touchmove", (e) => {
+    item.style.transition = `none`;
+}); 
 });
-}
+};
